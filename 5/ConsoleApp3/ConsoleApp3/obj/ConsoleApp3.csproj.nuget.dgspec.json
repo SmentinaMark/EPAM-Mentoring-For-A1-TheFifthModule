@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marks\\Desktop\\На всякий случай\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj": {}
+    "C:\\Users\\marks\\Desktop\\EPAM MENTORING MODULES\\EPAM-Mentoring-For-A1-TheFifthModule\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marks\\Desktop\\На всякий случай\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj": {
+    "C:\\Users\\marks\\Desktop\\EPAM MENTORING MODULES\\EPAM-Mentoring-For-A1-TheFifthModule\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marks\\Desktop\\На всякий случай\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj",
+        "projectUniqueName": "C:\\Users\\marks\\Desktop\\EPAM MENTORING MODULES\\EPAM-Mentoring-For-A1-TheFifthModule\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj",
         "projectName": "ConsoleApp3",
-        "projectPath": "C:\\Users\\marks\\Desktop\\На всякий случай\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj",
+        "projectPath": "C:\\Users\\marks\\Desktop\\EPAM MENTORING MODULES\\EPAM-Mentoring-For-A1-TheFifthModule\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj",
         "packagesPath": "C:\\Users\\marks\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marks\\Desktop\\На всякий случай\\5\\ConsoleApp3\\ConsoleApp3\\obj\\",
+        "outputPath": "C:\\Users\\marks\\Desktop\\EPAM MENTORING MODULES\\EPAM-Mentoring-For-A1-TheFifthModule\\5\\ConsoleApp3\\ConsoleApp3\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -61,6 +61,15 @@ namespace ConsoleApp3.Resourses {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на dd.MM.yyyy.
+        /// </summary>
+        internal static string CreationDate {
+            get {
+                return ResourceManager.GetString("CreationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Файл.
         /// </summary>
         internal static string File {

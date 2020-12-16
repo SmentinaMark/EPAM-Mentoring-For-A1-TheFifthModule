@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "frJJlEcN2oHxv5snOxX02ZPzgVu7Y9mWjmyuv8fMy+gOmQ3AXERHF7TNn4zFejoXVHslYKYEmsbgbxoR+S+YeA==",
+  "dgSpecHash": "I9dTgyt3Idb+stdW5YPCWOF9Hjs2vjvbggF3rINRDvpZmN0iE7fPU4QkMSvewTGZ/WPzodHC32vGpnEofdfkiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marks\\Desktop\\На всякий случай\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj",
+  "projectFilePath": "C:\\Users\\marks\\Desktop\\EPAM MENTORING MODULES\\EPAM-Mentoring-For-A1-TheFifthModule\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marks\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\marks\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",

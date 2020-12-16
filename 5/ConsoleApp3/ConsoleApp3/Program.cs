@@ -16,12 +16,13 @@ namespace ConsoleApp3
                 Configuration cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 StartupCustomSection s = (StartupCustomSection)cfg.GetSection("CustomSection");
 
-                s.SectionItems[0].Value = "en";
+                s.SectionItems[0].Value = "en-EN";
 
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(s.SectionItems[0].Value);
                 #endregion
 
                 var logger = new FileSystemLogger();
+
                 logger.AddListen(@"C:\");
 
                 while(true)
