@@ -120,6 +120,9 @@
   <data name="CreationDate" xml:space="preserve">
     <value>MM/dd/yyyy</value>
   </data>
+  <data name="ExtentionNotFound" xml:space="preserve">
+    <value>Extеntion not found</value>
+  </data>
   <data name="File" xml:space="preserve">
     <value>File</value>
   </data>

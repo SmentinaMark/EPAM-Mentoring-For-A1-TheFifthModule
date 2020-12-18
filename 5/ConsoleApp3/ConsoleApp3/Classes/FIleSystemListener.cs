@@ -27,20 +27,19 @@ namespace ConsoleApp3
         {
             try
             {
-                Console.WriteLine(res.File+ " " + e.Name + " - " + e.ChangeType);
+                Console.WriteLine(res.File + " " + e.Name + " - " + e.ChangeType);
 
                 var settings = ConfigurationManager.AppSettings;
-                
+
                 file = new FileInfo(e.FullPath);
 
                 foreach (var setting in settings)
                 {
                     if (file.Extension == setting.ToString())
                     {
-                        Console.WriteLine(res.File + " " + e.Name + " " + res.FileFound + " " + setting +" "+ DateTime.Now.ToString(res.CreationDate));
+                        Console.WriteLine(res.File + " " + e.Name + " " + res.FileFound + " " + setting + " " + DateTime.Now.ToString(res.CreationDate));
 
                         directory = new DirectoryInfo(settings.Get(setting.ToString()));
-
                         if (!directory.Exists)
                         {
                             directory.Create();
@@ -50,10 +49,12 @@ namespace ConsoleApp3
 
                         Console.WriteLine(res.File + " " + e.Name + " " + res.FileMove + " " + settings.Get(setting.ToString()));
                     }
-                    else
-                    {
-                        directory = new DirectoryInfo("По умолчанию");
 
+                    if (File.Exists(e.FullPath))
+                    {
+                        Console.WriteLine(res.ExtentionNotFound + " " + DateTime.Now.ToString(res.CreationDate));
+
+                        directory = new DirectoryInfo("По умолчанию");
                         if (!directory.Exists)
                         {
                             directory.Create();

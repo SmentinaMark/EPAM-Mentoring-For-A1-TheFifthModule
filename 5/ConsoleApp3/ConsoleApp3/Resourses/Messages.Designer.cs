@@ -70,6 +70,15 @@ namespace ConsoleApp3.Resourses {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Расширение не найдено.
+        /// </summary>
+        internal static string ExtentionNotFound {
+            get {
+                return ResourceManager.GetString("ExtentionNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Файл.
         /// </summary>
         internal static string File {
