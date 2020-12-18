@@ -44,26 +44,26 @@ namespace ConsoleApp3
                         {
                             directory.Create();
                         }
+                        Console.WriteLine(settings.Get(setting.ToString()));
 
                         file.MoveTo(directory.FullName + @"\" + (count += 1) + file.Name);
 
                         Console.WriteLine(res.File + " " + e.Name + " " + res.FileMove + " " + settings.Get(setting.ToString()));
                     }
+                }
+                if (File.Exists(e.FullPath))
+                {
+                    Console.WriteLine(res.ExtentionNotFound + " " + DateTime.Now.ToString(res.CreationDate));
 
-                    if (File.Exists(e.FullPath))
+                    directory = new DirectoryInfo("По умолчанию");
+                    if (!directory.Exists)
                     {
-                        Console.WriteLine(res.ExtentionNotFound + " " + DateTime.Now.ToString(res.CreationDate));
-
-                        directory = new DirectoryInfo("По умолчанию");
-                        if (!directory.Exists)
-                        {
-                            directory.Create();
-                        }
-
-                        file.MoveTo(directory.FullName + @"\" + (count += 1) + file.Name);
-
-                        Console.WriteLine(res.File + " " + e.Name + " " + res.FileMove + "По умолчанию");
+                        directory.Create();
                     }
+
+                    file.MoveTo(directory.FullName + @"\" + (count += 1) + file.Name);
+
+                    Console.WriteLine(res.File + " " + e.Name + " " + res.FileMove + " По умолчанию");
                 }
             }
             catch (Exception ex)
