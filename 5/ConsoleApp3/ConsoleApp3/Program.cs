@@ -8,7 +8,7 @@ namespace ConsoleApp3
 {
     class Program: ConfigurationSection
     {
-        static async Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
             try
             {
@@ -16,16 +16,30 @@ namespace ConsoleApp3
                 Configuration cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 StartupCustomSection s = (StartupCustomSection)cfg.GetSection("CustomSection");
 
-                s.SectionItems[0].Value = "en-EN";
+                if(s != null)
+                {
+                    System.Diagnostics.Debug.WriteLine(s.SectionItems[0].Key);
+                    System.Diagnostics.Debug.WriteLine(s.SectionItems[0].Value);
+                    s.SectionItems[0].Value = "en-EN";
+                    
+                    System.Diagnostics.Debug.WriteLine(s.SectionItems[1].Key);
+                    System.Diagnostics.Debug.WriteLine(s.SectionItems[1].Value);
+                    s.SectionItems[1].Value = @"C:\";
+                }
 
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(s.SectionItems[0].Value);
+                string culture = s.SectionItems[0].Value;
+                string path = s.SectionItems[1].Value;
+                string counter = s.SectionItems[2].Value;
+
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
                 #endregion
 
                 var logger = new FileSystemLogger();
+                logger.AddListen(path);
 
-                logger.AddListen(@"C:\");
+                cfg.Save();
 
-                while(true)
+                while (true)
                 {
                     await Task.Delay(1000);
                 }

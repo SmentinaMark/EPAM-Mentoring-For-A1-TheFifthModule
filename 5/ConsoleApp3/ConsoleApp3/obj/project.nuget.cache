@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "I9dTgyt3Idb+stdW5YPCWOF9Hjs2vjvbggF3rINRDvpZmN0iE7fPU4QkMSvewTGZ/WPzodHC32vGpnEofdfkiQ==",
+  "dgSpecHash": "rMDCZeEYPg5l5RubrmNRwUSg/49mBxDXKBN1K09egZN5Dl2RMwCJ8/XBO2iH1fkofMdoy8Pt67q6qa9akSIMJw==",
   "success": true,
   "projectFilePath": "C:\\Users\\marks\\Desktop\\EPAM MENTORING MODULES\\EPAM-Mentoring-For-A1-TheFifthModule\\5\\ConsoleApp3\\ConsoleApp3\\ConsoleApp3.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,9 @@
     "C:\\Users\\marks\\.nuget\\packages\\system.security.cryptography.protecteddata\\5.0.0\\system.security.cryptography.protecteddata.5.0.0.nupkg.sha512",
     "C:\\Users\\marks\\.nuget\\packages\\system.security.permissions\\5.0.0\\system.security.permissions.5.0.0.nupkg.sha512",
     "C:\\Users\\marks\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
-    "C:\\Users\\marks\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\marks\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\marks\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\marks\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.10\\microsoft.netcore.app.host.win-x64.3.1.10.nupkg.sha512"
   ],
   "logs": []
 }

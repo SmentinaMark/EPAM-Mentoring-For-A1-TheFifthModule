@@ -51,6 +51,7 @@ namespace ConsoleApp3
                         Console.WriteLine(res.File + " " + e.Name + " " + res.FileMove + " " + settings.Get(setting.ToString()));
                     }
                 }
+
                 if (File.Exists(e.FullPath))
                 {
                     Console.WriteLine(res.ExtentionNotFound + " " + DateTime.Now.ToString(res.CreationDate));
