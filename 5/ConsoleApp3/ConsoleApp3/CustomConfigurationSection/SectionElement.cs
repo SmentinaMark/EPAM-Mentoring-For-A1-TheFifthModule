@@ -19,5 +19,14 @@ namespace ConsoleApp3
 
             set { base["value"] = value; }
         }
+
+        [ConfigurationProperty("boolValue")]
+        public bool BoolValue
+        {
+            get { return (bool)base["boolValue"]; }
+
+            set { base["boolValue"] = value; }
+        }
+
     }
 }

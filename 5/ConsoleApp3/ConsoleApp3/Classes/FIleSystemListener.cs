@@ -7,9 +7,9 @@ namespace ConsoleApp3
 {
     class FIleSystemListener
     {
-        int count = 0;
-
         private readonly FileSystemWatcher _fileSystemWatcher;
+
+        int count = 0;
 
         FileInfo file;
         DirectoryInfo directory;
@@ -27,6 +27,9 @@ namespace ConsoleApp3
         {
             try
             {
+                Configuration cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                StartupCustomSection s = (StartupCustomSection)cfg.GetSection("CustomSection");
+
                 Console.WriteLine(res.File + " " + e.Name + " - " + e.ChangeType);
 
                 var settings = ConfigurationManager.AppSettings;
@@ -37,16 +40,32 @@ namespace ConsoleApp3
                 {
                     if (file.Extension == setting.ToString())
                     {
-                        Console.WriteLine(res.File + " " + e.Name + " " + res.FileFound + " " + setting + " " + DateTime.Now.ToString(res.CreationDate));
 
+                        if(s.SectionItems[2].BoolValue==true)
+                        {
+                            Console.WriteLine(res.File + " " + e.Name + " " + res.FileFound + " " + setting + " " + DateTime.Now.ToString(res.CreationDate));
+                        }
+                        else
+                        {
+                            Console.WriteLine(res.File + " " + e.Name + " " + res.FileFound + " " + setting);
+                        }
+                       
                         directory = new DirectoryInfo(settings.Get(setting.ToString()));
                         if (!directory.Exists)
                         {
                             directory.Create();
                         }
                         Console.WriteLine(settings.Get(setting.ToString()));
+                        
 
-                        file.MoveTo(directory.FullName + @"\" + (count += 1) + file.Name);
+                        if(s.SectionItems[1].BoolValue == true)
+                        {
+                            file.MoveTo(directory.FullName + @"\" + (count += 1) + file.Name);
+                        }
+                        else
+                        {
+                            file.MoveTo(directory.FullName + @"\" + file.Name);
+                        }
 
                         Console.WriteLine(res.File + " " + e.Name + " " + res.FileMove + " " + settings.Get(setting.ToString()));
                     }
@@ -54,7 +73,14 @@ namespace ConsoleApp3
 
                 if (File.Exists(e.FullPath))
                 {
-                    Console.WriteLine(res.ExtentionNotFound + " " + DateTime.Now.ToString(res.CreationDate));
+                    if(s.SectionItems[2].BoolValue == true)
+                    {
+                        Console.WriteLine(res.ExtentionNotFound + " " + DateTime.Now.ToString(res.CreationDate));
+                    }
+                    else
+                    {
+                        Console.WriteLine(res.ExtentionNotFound);
+                    }
 
                     directory = new DirectoryInfo("По умолчанию");
                     if (!directory.Exists)
@@ -62,7 +88,14 @@ namespace ConsoleApp3
                         directory.Create();
                     }
 
-                    file.MoveTo(directory.FullName + @"\" + (count += 1) + file.Name);
+                    if (s.SectionItems[1].BoolValue == true)
+                    {
+                        file.MoveTo(directory.FullName + @"\" + (count += 1) + file.Name);
+                    }
+                    else
+                    {
+                        file.MoveTo(directory.FullName + @"\" + file.Name);
+                    }
 
                     Console.WriteLine(res.File + " " + e.Name + " " + res.FileMove + " По умолчанию");
                 }
