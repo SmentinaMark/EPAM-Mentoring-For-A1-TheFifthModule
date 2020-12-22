@@ -2,6 +2,7 @@
 using System.IO;
 using System.Configuration;
 using res = ConsoleApp3.Resourses.Messages;
+using System.Text.RegularExpressions;
 
 namespace ConsoleApp3
 {
@@ -23,6 +24,7 @@ namespace ConsoleApp3
 
             _fileSystemWatcher.Created += _fileSystemWatcher_Changed;
         }
+
         private void _fileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
         {
             try
@@ -38,10 +40,9 @@ namespace ConsoleApp3
 
                 foreach (var setting in settings)
                 {
-                    if (file.Extension == setting.ToString())
+                    if(Regex.IsMatch(file.Extension, setting.ToString()))
                     {
-
-                        if(s.SectionItems[2].BoolValue==true)
+                        if(s.SectionItems[2].BoolValue == true)
                         {
                             Console.WriteLine(res.File + " " + e.Name + " " + res.FileFound + " " + setting + " " + DateTime.Now.ToString(res.CreationDate));
                         }
@@ -57,7 +58,6 @@ namespace ConsoleApp3
                         }
                         Console.WriteLine(settings.Get(setting.ToString()));
                         
-
                         if(s.SectionItems[1].BoolValue == true)
                         {
                             file.MoveTo(directory.FullName + @"\" + (count += 1) + file.Name);
